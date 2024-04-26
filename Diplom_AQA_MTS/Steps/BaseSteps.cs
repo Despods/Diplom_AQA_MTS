@@ -15,5 +15,6 @@ namespace Diplom_AQA_MTS.Steps
         protected LoginPage? LoginPage { get; set; }
         protected DashBoardPage? DashBoardPage { get; set; }
         protected TestCasesPage? TestCasePage { get; set; }
+        protected ProfileSettingsPage? ProfileSettingsPage { get; set; }
     }
 }

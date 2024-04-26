@@ -17,6 +17,11 @@ namespace Diplom_AQA_MTS.Steps
             return new DashBoardPage(_driver);
         }
 
+        public ProfileSettingsPage NavigateToProfileSettingsPage()
+        {
+            return new ProfileSettingsPage(_driver);
+        }
+
         public DashBoardPage SuccessfulLogin(User user)
         {
             return Login<DashBoardPage>(user);
