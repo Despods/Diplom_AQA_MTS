@@ -18,7 +18,7 @@ public class DriverFactory
         //chromeOptions.AddArguments("--disable-web-security");
         //chromeOptions.AddArguments("--user-data-dir");
         
-        //chromeOptions.AddArguments("--headless");
+        chromeOptions.AddArguments("--headless");
 
         chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
         chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
