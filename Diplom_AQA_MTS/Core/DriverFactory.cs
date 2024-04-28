@@ -15,6 +15,8 @@ public class DriverFactory
         chromeOptions.AddArguments("--incognito");
         chromeOptions.AddArguments("--disable-gpu");
         chromeOptions.AddArguments("--disable-extensions");
+        //chromeOptions.AddArguments("--disable-web-security");
+        //chromeOptions.AddArguments("--user-data-dir");
         
         //chromeOptions.AddArguments("--headless");
 
