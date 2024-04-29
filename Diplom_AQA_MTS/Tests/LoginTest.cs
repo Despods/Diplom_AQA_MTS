@@ -25,7 +25,7 @@ namespace Diplom_AQA_MTS.Tests
             var LoginPage = new LoginPage(Driver);
             LoginPage.IncorrectLogin("Incorect@mail.ru", "Login");
             Assert.That(LoginPage.ErrorLabel.Text.Trim(), Is.EqualTo(ErrorText));
-            AllureApi.Step($"Получена корректная ошибка : ", {ErrorText});
+            AllureApi.Step($"Получена корректная ошибка : {ErrorText}");
         }
     }
 }
