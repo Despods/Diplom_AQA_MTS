@@ -1,4 +1,5 @@
 ﻿using Diplom_AQA_MTS.Pages;
+using Diplom_AQA_MTS.Pages.ProjectPages;
 using OpenQA.Selenium;
 
 namespace Diplom_AQA_MTS.Steps
@@ -14,7 +15,8 @@ namespace Diplom_AQA_MTS.Steps
 
         protected LoginPage? LoginPage { get; set; }
         protected DashBoardPage? DashBoardPage { get; set; }
-        protected TestCasesPage? TestCasePage { get; set; }
+        protected AllProjectsPage? AllProjectsPage { get; set; }
+        protected AddProjectPage? AddProjectPage { get; set; }
         protected ProfileSettingsPage? ProfileSettingsPage { get; set; }
     }
 }

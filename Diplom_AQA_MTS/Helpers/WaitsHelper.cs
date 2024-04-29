@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using GraduateWork.Elements;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -51,7 +52,12 @@ public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
             throw new WebDriverTimeoutException("Элемент не стал невидимым в течение заданного времени");
         }
     }
-    
+
+    public ReadOnlyCollection<IWebElement> WaitForPresenceOfAllElementsLocatedBy(By locator)
+    {
+        return _wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
+    }
+
     public bool WaitForVisibility(IWebElement element)
     {
         return _wait.Until(_ => element.Displayed);
@@ -69,5 +75,17 @@ public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
         
         // Использование
         return fluentWait.Until(_ => driver.FindElement(locator));
+    }
+
+    public List<UIElement> WaitForAllVisibleUiElementsLocatedBy(By locator)
+    {
+        List<UIElement> result = new List<UIElement>();
+
+        foreach (IWebElement element in WaitForPresenceOfAllElementsLocatedBy(locator))
+        {
+            result.Add(new UIElement(driver, element));
+        }
+
+        return result;
     }
 }

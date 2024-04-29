@@ -7,14 +7,14 @@ namespace Diplom_AQA_MTS.Elements
     {
         private UIElement _uiElement;
         private List<UIElement> _list;
-        private By _By = By.CssSelector("[data - testid = 'dropdown-menu']");
+        private By _By = By.CssSelector("[data-testid='dropdown-menu'] li>div.menu-label");
 
         public DropDown(IWebDriver driver, By by)
         {
             _uiElement = new UIElement(driver, by);
             _uiElement.Click();
 
-            _list = _uiElement.FindUIElements(_By);
+            _list = _uiElement.FindUIElementsFull(_By);
         }
 
         public bool Enabled => _uiElement.Enabled;
@@ -46,16 +46,26 @@ namespace Diplom_AQA_MTS.Elements
 
         public void SelectByText(string text)//Выбор элемента по текстровому значению
         {
-           foreach (UIElement element in _list)
+            bool flag = false;
+
+            if (String.IsNullOrEmpty(text))
             {
-                if (element.Text == text)
+                throw new ArgumentNullException(text, "текст не должен быть пустым");
+            }
+
+            foreach (UIElement option in _list)
+            {
+                if (option.Text.Trim() == text)
                 {
-                    element.Click();
+                    option.Click();
+                    flag = true;
+                    return;
                 }
-                else
-                {
-                    throw new AssertionException("Не можем определить элемент с текстом" + text);
-                }
+            }
+
+            if (!flag)
+            {
+                throw new NoSuchElementException("Не можем определить элемент с текстом" + text);
             }
         }
     }
