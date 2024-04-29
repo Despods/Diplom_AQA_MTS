@@ -15,14 +15,7 @@ namespace Diplom_AQA_MTS.Clients
 
             _client = new RestClient(options);
             _client.AddDefaultHeader("Content-Type", "application/json");
-           // _client.AddDefaultHeader("Accept", "*/*");
-           // _client.AddDefaultHeader("Host", "app.testiny.io");
-           // _client.AddDefaultHeader("referrer-policy", "no-referrer");
-           // _client.AddDefaultHeader("Cache-Control", "no-cache");
-            //_client.AddDefaultHeader("User-Agent", "PostmanRuntime/7.37.3");
-            //_client.AddDefaultHeader("Postman-Token", "b6d93ca0-eb36-439d-88fe-357ee7526857t");
-            //_client.AddDefaultHeader("Connection", "keep-alive");
-
+            _client.AddDefaultHeader("Accept", "application/json");
 
             _client.AddDefaultHeaders(new Dictionary<string, string> { { "X-Api-Key", Configurator.AppSettings.ApiKey } });
         }
