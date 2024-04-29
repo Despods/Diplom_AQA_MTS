@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 29 12:41:59 GMT 2024","Mon Apr 29 12:42:16 GMT 2024","16744","","UI Login Tests","","LoginTest","UnCorrectLoginTest","Логин с передачей некорректных параметров","Тест использование некорректных данных"
+"passed","Mon Apr 29 12:41:59 GMT 2024","Mon Apr 29 12:42:16 GMT 2024","17264","","UI Login Tests","","LoginTest","CorrectLoginTest","Логин с передачей корректных параметров",""
+"passed","Mon Apr 29 12:41:59 GMT 2024","Mon Apr 29 12:42:20 GMT 2024","20851","","UI ProfileSettings Tests","","ProfileTest","UploadAvatarTest","Изменение аватара профиля",""
