@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 29 12:12:11 GMT 2024","Mon Apr 29 12:12:43 GMT 2024","31561","","","","LoginTest","CorrectLoginTest","CorrectLoginTest",""
+"passed","Mon Apr 29 12:12:11 GMT 2024","Mon Apr 29 12:12:46 GMT 2024","35140","","","","ProfileTest","UploadAvatarTest","UploadAvatarTest",""
+"passed","Mon Apr 29 12:12:11 GMT 2024","Mon Apr 29 12:12:42 GMT 2024","31042","","","","LoginTest","UnCorrectLoginTest","UnCorrectLoginTest",""
