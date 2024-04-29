@@ -7,21 +7,25 @@ namespace Diplom_AQA_MTS.Steps
 {
     public class NavigationSteps(IWebDriver driver) : BaseSteps(driver)
     {
+        [AllureStep("Navigate To Login Page")]
         public LoginPage NavigateToLoginPage()
         {
             return new LoginPage(_driver);
         }
 
+        [AllureStep("Navigate To Dashboard Page")]
         public DashBoardPage NavigateToDashboardPage()
         {
             return new DashBoardPage(_driver);
         }
 
+        [AllureStep("Navigate To ProfileSettings Page")]
         public ProfileSettingsPage NavigateToProfileSettingsPage()
         {
             return new ProfileSettingsPage(_driver);
         }
 
+        [AllureStep("Navigate To Dashboard Page")]
         public DashBoardPage SuccessfulLogin(User user)
         {
             return Login<DashBoardPage>(user);

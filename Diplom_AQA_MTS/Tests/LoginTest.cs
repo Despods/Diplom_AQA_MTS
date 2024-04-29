@@ -27,5 +27,17 @@ namespace Diplom_AQA_MTS.Tests
             Assert.That(LoginPage.ErrorLabel.Text.Trim(), Is.EqualTo(ErrorText));
             AllureApi.Step($"Получена корректная ошибка : {ErrorText}");
         }
+
+        [Test]
+        [AllureName("Тест воспроизводищий дефект")]
+        [AllureDescription("При неккоректном логине ждем, что открыта страница дашборда")]
+        [AllureIssue("BugLogin")]
+        public void UnCorrectLoginTestBug()
+        {
+            var LoginPage = new LoginPage(Driver);
+            LoginPage.IncorrectLogin("Incorect@mail.ru", "Login");
+            var DashBoardPage = new DashBoardPage(Driver);
+            Assert.That(DashBoardPage.IsPageOpenend);
+        }
     }
 }
