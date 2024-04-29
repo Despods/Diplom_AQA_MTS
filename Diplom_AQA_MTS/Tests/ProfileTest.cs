@@ -9,6 +9,8 @@ namespace Diplom_AQA_MTS.Tests
         public void UploadAvatarTest()
         {
             NavigationSteps.SuccessfulLogin(Admin);
+            var DashBoardPage = new DashBoardPage(Driver);
+            DashBoardPage.IsPageOpenend();
             var ProfileSettingsPage = new ProfileSettingsPage(Driver,true);
             ProfileSettingsPage.ProfileUploadAvatar();
             Assert.That(ProfileSettingsPage.AvatarImage.Displayed);

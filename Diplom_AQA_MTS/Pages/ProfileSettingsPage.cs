@@ -49,7 +49,7 @@ namespace Diplom_AQA_MTS.Pages
             string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
             // Конструируем путь к файлу внутри проекта
-            string filePath = Path.Combine(assemblyPath, "Resources", "enot.jpeg");
+            string filePath = Path.Combine(assemblyPath, "Resources", "enot.jpeg"); 
             MenuButtonАccount.Click();
             UploadAvatarElement.SendKeys(filePath);
             ButtonSave.Click();
@@ -59,6 +59,7 @@ namespace Diplom_AQA_MTS.Pages
 
         public ProfileSettingsPage ProfileDeleteAvatar()
         {
+            MenuButtonАccount.Click();
             ButtonDelete.Click();
             ButtonSave.Click();
 
