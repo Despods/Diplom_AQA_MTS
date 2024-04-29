@@ -3,7 +3,7 @@ using Diplom_AQA_MTS.Steps;
 using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
 
-namespace Diplom_AQA_MTS.Tests
+namespace Diplom_AQA_MTS.Tests.GUI
 {
     [AllureSuite("UI Login Tests")]
     public class LoginTest : BaseTest

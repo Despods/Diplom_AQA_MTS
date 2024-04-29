@@ -16,6 +16,7 @@ public class BaseTest
     protected IWebDriver Driver { get; private set; }
     protected User? Admin { get; private set; }
     protected NavigationSteps NavigationSteps;
+    protected Random Random = new Random();
 
     [OneTimeSetUp]
     public static void GlobalSetup()
