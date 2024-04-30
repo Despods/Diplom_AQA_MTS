@@ -1,0 +1,4 @@
+2024/04/30 11:31:03.747|DEBUG|Get запрос: v1/project 
+2024/04/30 11:31:03.807|DEBUG|Запрос завершился со статусом: OK 
+2024/04/30 11:31:03.807|DEBUG|Тело ответа:
+{"status":true,"result":{"total":2,"filtered":2,"count":2,"entities":[{"title":"Demo Project","code":"DEMO","counts":{"cases":10,"suites":3,"milestones":2,"runs":{"total":0,"active":0},"defects":{"total":1,"open":1}}},{"title":"Cats 94","code":"999","counts":{"cases":0,"suites":0,"milestones":0,"runs":{"total":0,"active":0},"defects":{"total":0,"open":0}}}]}} 
