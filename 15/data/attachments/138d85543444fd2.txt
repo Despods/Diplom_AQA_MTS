@@ -1,0 +1,4 @@
+2024/04/30 07:41:15.667|DEBUG|Get запрос: v1/project/{code} 
+2024/04/30 07:41:15.817|DEBUG|Запрос завершился со статусом: OK 
+2024/04/30 07:41:15.817|DEBUG|Тело ответа:
+{"status":true,"result":{"title":"Cats 31","code":"999","counts":{"cases":0,"suites":0,"milestones":0,"runs":{"total":0,"active":0},"defects":{"total":0,"open":0}}}} 
