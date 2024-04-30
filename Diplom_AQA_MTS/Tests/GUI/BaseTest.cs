@@ -1,10 +1,10 @@
 ﻿using Allure.Core;
-using Allure.Helpers.Configuration;
 using Allure.Net.Commons;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
 using Diplom_AQA_MTS.Models;
 using Diplom_AQA_MTS.Steps;
+using Diplom_AQA_MTS.Helpers.Configuration;
 
 namespace Diplom_AQA_MTS.Tests;
 

@@ -2,7 +2,6 @@
 using Diplom_AQA_MTS.Steps;
 using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
-using Allure.Helpers.Configuration;
 using Diplom_AQA_MTS.Models;
 using Diplom_AQA_MTS.Pages.ProjectPages;
 

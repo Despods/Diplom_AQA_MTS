@@ -10,7 +10,7 @@ namespace Diplom_AQA_MTS.Tests.API
 
     public class BaseApiTest
     {
-        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        protected readonly Logger Logger = LogManager.GetCurrentClassLogger();
         protected ProjectService? ProjectService;
 
         [OneTimeSetUp]

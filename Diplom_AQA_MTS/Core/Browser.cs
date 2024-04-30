@@ -1,4 +1,4 @@
-﻿using Allure.Helpers.Configuration;
+﻿using Diplom_AQA_MTS.Helpers.Configuration;
 using OpenQA.Selenium;
 
 namespace Allure.Core

@@ -1,18 +1,14 @@
 ﻿using Diplom_AQA_MTS.Models;
-using NUnit.Engine.Extensibility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using RestSharp;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Diplom_AQA_MTS.Services
 {
     public interface IProjectService
     {
-        Task<Project> GetProject(int projectId);
-        Task<Project> AddProject(Project project);
-        HttpStatusCode DeleteProject(int projectId);
+        Task<CreateProjectResponse> AddProject(ProjectQase project);
+        Task<GetProjectResponse> GetProject(string projectCode);
+        Task<GetAllProjectsResponse> GetAllProjects();
+        HttpStatusCode DeleteProject(string projectCode);
     }
 }

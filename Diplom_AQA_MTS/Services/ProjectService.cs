@@ -14,27 +14,52 @@ namespace Diplom_AQA_MTS.Services
             _client = client;
         }
 
-        public Task<Project> GetProject(int projectId)
+        /// <summary>
+        /// Данный метод используется для создания проекта через АПИ.
+        /// </summary>
+        /// <param name="project"></param>
+        /// <returns></returns>
+        public Task<CreateProjectResponse> AddProject(ProjectQase project)
         {
-            var request = new RestRequest("api/v1/project/{project_id}")
-                .AddUrlSegment("project_id", projectId);
-
-            return _client.ExecuteAsync<Project>(request);
-        }
-
-        public Task<Project> AddProject(Project project)
-        {
-            var request = new RestRequest("api/v1/project", Method.Post)
+            var request = new RestRequest("v1/project", Method.Post)
                 .AddJsonBody(project);
 
-            return _client.ExecuteAsync<Project>(request);
+            return _client.ExecuteAsync<CreateProjectResponse>(request);
         }
 
-        public HttpStatusCode DeleteProject(int projectId)
+        /// <summary>
+        /// Данный метод ползволяет получить информацию о проекта используя код проекта.
+        /// </summary>
+        /// <param name="projectCode">project code</param>
+        /// <returns></returns>
+        public Task<GetProjectResponse> GetProject(string projectCode)
         {
-            var request = new RestRequest("api/v1/project/{project_id}", Method.Delete)
-                .AddUrlSegment("project_id", projectId)
-                .AddJsonBody("{}");
+            var request = new RestRequest("v1/project/{code}", Method.Get)
+                .AddUrlSegment("code", projectCode);
+
+            return _client.ExecuteAsync<GetProjectResponse>(request);
+        }
+
+        /// <summary>
+        /// Данный метод вернет все проекты, которые есть на аккаунте.
+        /// </summary>
+        /// <returns></returns>
+        public Task<GetAllProjectsResponse> GetAllProjects()
+        {
+            var request = new RestRequest("v1/project", Method.Get);
+
+            return _client.ExecuteAsync<GetAllProjectsResponse>(request);
+        }
+
+        /// <summary>
+        /// Данный метод позволяет удалить проект используя код проекта.
+        /// </summary>
+        /// <param name="projectCode">project code</param>
+        /// <returns></returns>
+        public HttpStatusCode DeleteProject(string projectCode)
+        {
+            var request = new RestRequest("v1/project/{code}", Method.Delete)
+                .AddUrlSegment("code", projectCode);
 
             return _client.ExecuteAsync(request).Result.StatusCode;
         }

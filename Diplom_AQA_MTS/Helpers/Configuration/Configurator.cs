@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace Allure.Helpers.Configuration
+namespace Diplom_AQA_MTS.Helpers.Configuration
 {
     public static class Configurator
     {
@@ -38,6 +38,8 @@ namespace Allure.Helpers.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
+                appSettings.API_URL = child["API_URL"];
+                appSettings.Token = child["Token"];
                 appSettings.Username = child["Username"];
                 appSettings.Password = child["Password"];
 
@@ -46,6 +48,6 @@ namespace Allure.Helpers.Configuration
         }
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
-        public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
+        public static double WaitsTimeout => double.Parse(Configuration[nameof(WaitsTimeout)]);
     }
 }

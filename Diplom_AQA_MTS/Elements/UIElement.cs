@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Drawing;
-using Allure.Helpers.Configuration;
 using Allure.Helpers;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using Diplom_AQA_MTS.Helpers.Configuration;
 
 namespace GraduateWork.Elements;
 

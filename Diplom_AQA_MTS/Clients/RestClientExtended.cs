@@ -1,4 +1,5 @@
-﻿using Allure.Helpers.Configuration;
+﻿using Allure.Net.Commons;
+using Diplom_AQA_MTS.Helpers.Configuration;
 using NLog;
 using RestSharp;
 
@@ -11,13 +12,12 @@ namespace Diplom_AQA_MTS.Clients
 
         public RestClientExtended()
         {
-            var options = new RestClientOptions(Configurator.AppSettings.URL ?? throw new InvalidOperationException());
+            var options = new RestClientOptions(Configurator.AppSettings.API_URL ?? throw new InvalidOperationException());
 
             _client = new RestClient(options);
             _client.AddDefaultHeader("Content-Type", "application/json");
             _client.AddDefaultHeader("Accept", "application/json");
-
-            _client.AddDefaultHeaders(new Dictionary<string, string> { { "X-Api-Key", Configurator.AppSettings.ApiKey } });
+            _client.AddDefaultHeader("token", Configurator.AppSettings.Token);
         }
 
         public void Dispose()
@@ -28,14 +28,16 @@ namespace Diplom_AQA_MTS.Clients
 
         private void LogRequest(RestRequest request)
         {
-            _logger.Debug($"{request.Method} request to: {request.Resource}");
+            AllureApi.Step($"{request.Method} запрос: {request.Resource}");
+            _logger.Debug($"{request.Method} запрос: {request.Resource}");
 
             var body = request.Parameters
                 .FirstOrDefault(p => p.Type == ParameterType.RequestBody)?.Value;
 
             if (body != null)
             {
-                _logger.Debug($"body: {body}");
+                AllureApi.Step($"Тело запроса:\n{JsonSerializer.Serialize(body)}");
+                _logger.Debug($"Тело запроса:\n{JsonSerializer.Serialize(body)}");
             }
         }
 
@@ -44,14 +46,15 @@ namespace Diplom_AQA_MTS.Clients
             if (response.ErrorException != null)
             {
                 _logger.Error(
-                    $"Error retrieving response. Check inner details for more info. \n{response.ErrorException.Message}");
+                    $"В ответе получена ошибка \n{response.ErrorException.Message}");
             }
 
-            _logger.Debug($"Request finished with status code: {response.StatusCode}");
+            _logger.Debug($"Запрос завершился со статусом: {response.StatusCode}");
 
             if (!string.IsNullOrEmpty(response.Content))
             {
-                _logger.Debug(response.Content);
+                AllureApi.Step($"Тело ответа: \n{response.Content}");
+                _logger.Debug($"Тело ответа:\n{response.Content}");
             }
         }
 
