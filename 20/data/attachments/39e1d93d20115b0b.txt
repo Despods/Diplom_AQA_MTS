@@ -1,0 +1,7 @@
+2024/04/30 11:52:35.409|INFO|Diplom_AQA_MTS.Models.ProjectQase 
+2024/04/30 11:52:35.442|DEBUG|Post запрос: v1/project 
+2024/04/30 11:52:35.459|DEBUG|Тело запроса:
+{"title":"Cats 97","code":"999","description":"Cats help me please"} 
+2024/04/30 11:52:35.961|DEBUG|Запрос завершился со статусом: OK 
+2024/04/30 11:52:35.961|DEBUG|Тело ответа:
+{"status":true,"result":{"code":"999"}} 
