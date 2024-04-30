@@ -1,0 +1,8 @@
+2024/04/30 11:40:26.465|DEBUG|Post запрос: v1/project 
+2024/04/30 11:40:26.465|DEBUG|Тело запроса:
+{"title":null,"code":"12345678910","description":"Cats help me please"} 
+2024/04/30 11:40:26.531|ERROR|В ответе получена ошибка 
+Request failed with status code BadRequest 
+2024/04/30 11:40:26.531|DEBUG|Запрос завершился со статусом: BadRequest 
+2024/04/30 11:40:26.531|DEBUG|Тело ответа:
+{"status":false,"errorMessage":"Data is invalid.","errorFields":[{"field":"title","error":"Title is required."},{"field":"code","error":"Project code may not be greater than 10 characters."}]} 

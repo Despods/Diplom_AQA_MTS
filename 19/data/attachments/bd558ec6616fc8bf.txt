@@ -1,0 +1,9 @@
+2024/04/30 11:40:26.232|DEBUG|Diplom_AQA_MTS.Models.ProjectQase 
+2024/04/30 11:40:26.232|DEBUG|Post запрос: v1/project 
+2024/04/30 11:40:26.232|DEBUG|Тело запроса:
+{"title":"JSON export data Project","code":"JSON","description":"Me with cat ipmoting JSON"} 
+2024/04/30 11:40:26.311|ERROR|В ответе получена ошибка 
+Request failed with status code BadRequest 
+2024/04/30 11:40:26.311|DEBUG|Запрос завершился со статусом: BadRequest 
+2024/04/30 11:40:26.311|DEBUG|Тело ответа:
+{"status":false,"errorMessage":"Data is invalid.","errorFields":[{"field":"project","error":"Project with the same code already exists."}]} 

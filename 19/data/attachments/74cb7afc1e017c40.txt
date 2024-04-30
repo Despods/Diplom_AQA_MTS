@@ -1,0 +1,9 @@
+2024/04/30 11:40:26.338|INFO|Diplom_AQA_MTS.Models.ProjectQase 
+2024/04/30 11:40:26.338|DEBUG|Post запрос: v1/project 
+2024/04/30 11:40:26.338|DEBUG|Тело запроса:
+{"title":"Cats 92","code":"12345678910","description":"Cats help me please"} 
+2024/04/30 11:40:26.391|ERROR|В ответе получена ошибка 
+Request failed with status code BadRequest 
+2024/04/30 11:40:26.391|DEBUG|Запрос завершился со статусом: BadRequest 
+2024/04/30 11:40:26.391|DEBUG|Тело ответа:
+{"status":false,"errorMessage":"Data is invalid.","errorFields":[{"field":"code","error":"Project code may not be greater than 10 characters."}]} 

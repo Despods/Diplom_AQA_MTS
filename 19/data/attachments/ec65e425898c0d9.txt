@@ -1,0 +1,6 @@
+2024/04/30 11:40:26.395|DEBUG|Get запрос: v1/project/{code} 
+2024/04/30 11:40:26.465|ERROR|В ответе получена ошибка 
+Request failed with status code NotFound 
+2024/04/30 11:40:26.465|DEBUG|Запрос завершился со статусом: NotFound 
+2024/04/30 11:40:26.465|DEBUG|Тело ответа:
+{"status":false,"errorMessage":"Project not found"} 
