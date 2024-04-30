@@ -1,6 +1,9 @@
 ﻿using OpenQA.Selenium;
 using Diplom_AQA_MTS.Elements;
 using GraduateWork.Elements;
+using Allure.Net.Commons;
+using Diplom_AQA_MTS.Models;
+using NUnit.Allure.Attributes;
 
 namespace Diplom_AQA_MTS.Pages
 {
@@ -40,8 +43,11 @@ namespace Diplom_AQA_MTS.Pages
             return END_POINT;
         }
 
+        [AllureStep("Неккоректный логин")]
         public LoginPage IncorrectLogin(string username, string password)
         {
+            AllureApi.AddTestParameter("Login", username);
+            AllureApi.AddTestParameter("Password", password, ParameterMode.Masked);
             InputEmail.SendKeys(username);
             InputPassword.SendKeys(password);
             ButtonLogin.Click();

@@ -1,4 +1,5 @@
-﻿using Diplom_AQA_MTS.Models;
+﻿using Allure.Net.Commons;
+using Diplom_AQA_MTS.Models;
 using Diplom_AQA_MTS.Pages;
 using Diplom_AQA_MTS.Pages.ProjectPages;
 using NUnit.Allure.Attributes;
@@ -46,6 +47,8 @@ namespace Diplom_AQA_MTS.Steps
 
         public T Login<T>(User user) where T : BasePage
         {
+            AllureApi.AddTestParameter("Login", user.Username);
+            AllureApi.AddTestParameter("Password", user.Password, ParameterMode.Masked);
             LoginPage = new LoginPage(_driver);
 
             LoginPage.InputEmail.SendKeys(user.Username);

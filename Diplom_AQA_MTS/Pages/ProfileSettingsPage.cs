@@ -2,6 +2,7 @@
 using Diplom_AQA_MTS.Elements;
 using GraduateWork.Elements;
 using System.Reflection;
+using NUnit.Allure.Attributes;
 
 namespace Diplom_AQA_MTS.Pages
 {
@@ -43,8 +44,10 @@ namespace Diplom_AQA_MTS.Pages
             return END_POINT;
         }
 
+        [AllureStep("Обновляем аватар")]
         public ProfileSettingsPage ProfileUploadAvatar ()
         {
+
             // Получаем путь к исполняемому файлу (exe)
             string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
@@ -57,6 +60,7 @@ namespace Diplom_AQA_MTS.Pages
             return this;
         }
 
+        [AllureStep("Удаляем аватар")]
         public ProfileSettingsPage ProfileDeleteAvatar()
         {
             MenuButtonАccount.Click();

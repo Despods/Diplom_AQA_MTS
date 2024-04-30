@@ -8,6 +8,7 @@ using System.Reflection;
 
 namespace Diplom_AQA_MTS.Tests.API
 {
+    [AllureSuite("API Project Tests")]
     public class ApiTests : BaseApiTest
     {
         private readonly Logger _logger = LogManager.GetCurrentClassLogger();

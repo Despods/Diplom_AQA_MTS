@@ -11,6 +11,7 @@ namespace Diplom_AQA_MTS.Tests.GUI
     public class ProjectTest : BaseTest
     {
         [Test]
+        [AllureFeature("Project")]
         [AllureName("Добавление проекта")]
         public void AddProjectTest()
         {
@@ -32,6 +33,7 @@ namespace Diplom_AQA_MTS.Tests.GUI
         }
 
         [Test]
+        [AllureFeature("Project")]
         [AllureName("Удаление проекта")]
         public void RemoveProjectTest()
         {
@@ -67,6 +69,7 @@ namespace Diplom_AQA_MTS.Tests.GUI
         }
 
         [Test]
+        [AllureFeature("Project")]
         [AllureName("Негативная проверка граничного значения поля key проекта")]
         public void NegativeKeyInputCheck()
         {

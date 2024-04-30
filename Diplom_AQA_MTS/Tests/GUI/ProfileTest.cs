@@ -9,6 +9,7 @@ namespace Diplom_AQA_MTS.Tests.GUI
     public class ProfileTest : BaseTest
     {
         [Test]
+        [AllureFeature("Profile")]
         [AllureName("Изменение аватара профиля")]
         public void UploadAvatarTest()
         {
