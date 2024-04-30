@@ -39,7 +39,7 @@ namespace Diplom_AQA_MTS.Tests.GUI
         [AllureFeature("Login")]
         [AllureName("Тест воспроизводищий дефект")]
         [AllureDescription("При неккоректном логине ждем, что открыта страница дашборда")]
-        [AllureIssue("BugLogin")]
+        //[AllureIssue("BugLogin")]
         public void UnCorrectLoginTestBug()
         {
             var LoginPage = new LoginPage(Driver);
