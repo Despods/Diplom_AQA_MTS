@@ -56,14 +56,14 @@ namespace Diplom_AQA_MTS.Pages.ProjectPages
             }
         }
 
-        [AllureStep("Select project by Project Name")]
+        [AllureStep("Выбираем элемент по Project Name")]
         public DashBoardPage SelectByProjectNameElementLink(UIElement element)
         {
             element.Click();
             return new DashBoardPage(_driver);
         }
 
-        [AllureStep("Select record by Project Key")]
+        [AllureStep("Выбираем элемент по Project Key")]
         public EditProjectPage SelectRecordByProjectKeyElement(UIElement element)
         {
             element.Click();
@@ -87,7 +87,7 @@ namespace Diplom_AQA_MTS.Pages.ProjectPages
             }
         }
 
-        [AllureStep("Click Confirm Button")]
+        [AllureStep("Жмем кнопку подтвердить")]
         public T ConfirmButtonClick<T>()
         {
             ConfirmButton.Click();

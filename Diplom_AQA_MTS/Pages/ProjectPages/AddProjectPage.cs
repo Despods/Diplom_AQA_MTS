@@ -65,7 +65,7 @@ namespace Diplom_AQA_MTS.Pages
             return new DashBoardPage(_driver);
         }
 
-        [AllureStep("Input Project Fields")]
+        [AllureStep("Вводим данные проекта")]
         public AddProjectPage InputProjectFields(Project project)
         {
             NameInput.SendKeys(project.ProjectName);
